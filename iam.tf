@@ -1,8 +1,8 @@
 # IAM policy for AWS Load Balancer Controller
 # Policy reference: https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/install/iam_policy.json
 resource "aws_iam_policy" "lb_controller" {
-  name        = "AWSLoadBalancerControllerPolicy-gaming"
-  description = "IAM policy for AWS Load Balancer Controller in gaming-core-cluster"
+  name        = "AWSLoadBalancerControllerPolicy-platform-workloads"
+  description = "IAM policy for AWS Load Balancer Controller in platform-workloads cluster"
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -266,7 +266,7 @@ resource "aws_iam_policy" "lb_controller" {
 
 # IAM role for service account (IRSA)
 resource "aws_iam_role" "lb_controller" {
-  name = "AWSLoadBalancerControllerRole-gaming"
+  name = "AWSLoadBalancerControllerRole-platform-workloads"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
